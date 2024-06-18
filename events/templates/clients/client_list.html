@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam členů</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-blue-800 h-screen flex flex-col content-center items-center">
+<h1 class="pt-2 text-3xl text-white font-semibold pl-2 pr-2">Seznam členů</h1>
+<ul class="text-gray font-semibold">
+    {% for client in clients %}
+    <li><a href="{% url 'client_detail' client.pk %}">{{ client.first_name }} {{ client.last_name }}  🔍️</a></li>
+    {% endfor %}
+</ul>
+<div class="m-2 p-2 flex">
+    <div>
+        <a href="{% url 'client_new' %}" class="text-2xl text-green-400 green font-semibold pl-2">+</a>
+        <a href="{% url 'client_new' %}" class="text-2xl text-white font-semibold pl-2 pr-2">Nový člen</a>
+    </div>
+    <div>
+        <a href="{% url 'client_delete_select' %}" class="text-2xl text-red-400 red font-semibold pl-2">-</a>
+        <a href="{% url 'client_delete_select' %}" class="text-2xl text-white font-semibold pl-2 pr-2">Smazat člena</a>
+    </div>
+</div>
+</body>
+</html>

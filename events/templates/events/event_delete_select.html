@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vybrat událost k vymazání</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-blue-800 h-screen flex flex-col content-center items-center">
+<div class="m-2 p-2 flex-col">
+<h1 class="text-2xl text-white font-semibold">Vybrat událost k vymazání</h1>
+<ul class="text-lg text-white font-semibold">
+    {% for event in events %}
+    <li>
+        {{ event.name }}
+        <a class="text-red-700 pl-2" href="{% url 'event_delete_confirm' event.pk %}"> ❌  Smazat</a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="text-2xl text-white font-semibold pt-5" href="{% url 'event_list' %}"> ↪️ Zpět na seznam událostí</a>
+</div>
+</body>
+</html>

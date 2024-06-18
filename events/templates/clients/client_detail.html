@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail člena</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-blue-800 h-screen flex flex-col content-center items-center">
+<h1 class="pt-2 text-3xl text-white font-semibold pl-2 pr-2">
+    {{ client.first_name }}
+    {{ client.last_name }}</h1>
+<p>Email: {{ client.email }}</p>
+<a class="text-2xl text-white font-semibold pt-2"href="{% url 'client_edit' client.pk %}">Upravit</a>
+</body>
+</html>

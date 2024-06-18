@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upravit akci</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-blue-800 h-screen flex flex-col content-center items-center text-center">
+<h1 class="pt-2 text-3xl text-white font-semibold pl-2 pr-2">Nastavení akce</h1>
+<div class="m-2 p-2 flex">
+<form class="m-3 p-3" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="text-2xl text-white font-semibold pt-2" type="submit"> ✅ Uložit</button>
+</form>
+</div>
+</body>
+</html>

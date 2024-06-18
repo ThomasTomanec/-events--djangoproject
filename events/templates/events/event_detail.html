@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail akce</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-blue-800 h-screen flex flex-col content-center items-center">
+<div class="m-2 p-2 text-center">
+    <h1 class="text-2xl text-white font-semibold">{{ event.name }}</h1>
+    <div class="p-2 m-2 text-lg text-white font-semibold">
+        <p>Místo: {{ event.location }}</p>
+        <p>Výsledek: {{ event.result }}</p>
+        <p>Klient: {{ event.client }}</p>
+    </div>
+<a class="text-2xl text-white font-semibold pt-2 pb-2" href="{% url 'event_edit' event.pk %}"> 🛠️ Upravit</a>
+</div>
+</body>
+</html>
